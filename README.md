@@ -21,7 +21,7 @@ You can also use the equivalent Python setup commands:
 
 ### Features
 
-### Image Utils
+### Hello World
 
 From [wtfrestful.client.hello.World](https://github.com/happyfaults/pywtfrestful/blob/master/src/wtfrestful/client/hello/__init__.py)
 ```python
@@ -29,7 +29,7 @@ from wtfrestful.client.hello import World
 a = World.Load()
 ```
 
-### Say Hello
+#### Say Hello
 
 ```python
 >>> a.hello('Jim')

@@ -24,16 +24,24 @@ def tmp_dir():
     )
 
 @pytest.mark.parametrize(
-    'name', [
-    ('Bob'),
-    ('Mary'),
-])
+    'nick_names', [[
+    ('b', 'Bob'),
+    ('mj', 'Mary Jane'),
+    ('kt', 'Knight Rider')
+]])
 def test_hello_world(
-    app, name
+    app, nick_names
 ):
     
-    msg = app.hello(
-        name
-    )
+    for nick, name in nick_names:
+        app.setName(
+            nick, name
+        )
+        assert app.getName(nick) == name
 
-    assert msg == 'Hello {name}!'
+    stats = app.getStats()
+
+    assert stats['count'] == len(nick_names)
+    
+
+    
